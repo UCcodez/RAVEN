@@ -6,7 +6,7 @@ import Layout from "./components/layout/Layout";
 import ProgressPage from "./pages/ProgressPage";
 import EvidencePage from "./pages/EvidencePage";
 import FixCenterPage from "./pages/FixCenterPage";
-import BeforeAfterPage from "./pages/BeforeAfterPage";
+import BeforeAfterPage from "./pages/BeforeAfterpage";
 
 
 export default function App() {

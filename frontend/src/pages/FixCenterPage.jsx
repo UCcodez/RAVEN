@@ -8,7 +8,7 @@ import SeverityBadge from "../components/ui/SeverityBadge";
 import CodeBlock from "../components/ui/CodeBlock";
 import EmptyState from "../components/ui/EmptyState";
 import ErrorState from "../components/ui/ErrorState";
-import styles from "./FixCenterPage.module.css";
+import styles from "./FixcenterPage.module.css";
 
 function Remediation({ findingId, analysisId }) {
   const navigate = useNavigate();
