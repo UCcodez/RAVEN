@@ -1,0 +1,2117 @@
+{
+ "analysis": {
+  "id": "an-demo-after",
+  "filename": "starttls-enforced_after.pcap",
+  "status": "completed",
+  "created_at": "2026-09-29T09:00:00Z",
+  "size_bytes": 201728,
+  "sha256": "0a8dcd30850b6d010c9d27b7b29e2fff722d063e00f9933b157798f5f2153412",
+  "counts": {
+   "packets": 508,
+   "streams": 12,
+   "sessions": 12,
+   "unreconstructed_streams": 0
+  },
+  "stages": [
+   {
+    "name": "validated",
+    "duration_ms": 180
+   },
+   {
+    "name": "protocols",
+    "duration_ms": 420
+   },
+   {
+    "name": "streams",
+    "duration_ms": 900
+   },
+   {
+    "name": "tls",
+    "duration_ms": 640
+   },
+   {
+    "name": "certs",
+    "duration_ms": 310
+   },
+   {
+    "name": "risk",
+    "duration_ms": 550
+   },
+   {
+    "name": "report",
+    "duration_ms": 260
+   }
+  ],
+  "elapsed_ms": 3260,
+  "posture_score": 95,
+  "band": "Strong",
+  "finding_count": 1,
+  "session_count": 12
+ },
+ "posture": {
+  "analysis_id": "an-demo-after",
+  "score": 95,
+  "band": "Strong",
+  "band_note": "Presentation band, not a certified rating",
+  "sub_scores": {
+   "Protocol": 96,
+   "TLS": 95,
+   "Certificates": 92,
+   "Ciphers": 96,
+   "Forward Secrecy": 100,
+   "Anomaly": 90
+  },
+  "previous_analysis_id": "an-demo-before",
+  "regression": false,
+  "retroactive_decryption_exposure": 0,
+  "kpis": {
+   "sessions": 12,
+   "findings": 1,
+   "critical": 0,
+   "encrypted_pct": 100
+  },
+  "distributions": {
+   "severity": {
+    "clean": 10,
+    "low": 2
+   },
+   "protocol": {
+    "IMAP": 4,
+    "SMTP": 8
+   },
+   "tls_version": {
+    "TLS 1.2": 5,
+    "TLS 1.3": 7
+   },
+   "cert_health": {
+    "not_observable": 7,
+    "valid": 5
+   },
+   "forward_secrecy": {
+    "pfs": 12,
+    "no_pfs": 0,
+    "not_applicable": 0
+   }
+  }
+ },
+ "sessions": [
+  {
+   "session_id": "a-s01",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:00:37Z",
+   "duration_ms": 4310,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_256_GCM_SHA384",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s02",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Outlook 16",
+   "client_ip": "10.0.1.11",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:01:14Z",
+   "duration_ms": 4520,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_128_GCM_SHA256",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s03",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Python smtplib",
+   "client_ip": "10.0.1.12",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:01:51Z",
+   "duration_ms": 4730,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.2",
+   "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+   "cert_status": "valid"
+  },
+  {
+   "session_id": "a-s04",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.14",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:02:28Z",
+   "duration_ms": 4940,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_256_GCM_SHA384",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s05",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.15",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:03:05Z",
+   "duration_ms": 5150,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.2",
+   "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+   "cert_status": "valid"
+  },
+  {
+   "session_id": "a-s06",
+   "protocol": "SMTP",
+   "port": 587,
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.14",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:03:42Z",
+   "duration_ms": 5360,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_256_GCM_SHA384",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s07",
+   "protocol": "SMTP",
+   "port": 25,
+   "client": "mx.partner.example (MTA)",
+   "client_ip": "203.0.113.40",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:04:19Z",
+   "duration_ms": 5570,
+   "encryption": "STARTTLS",
+   "risk": "low",
+   "finding_count": 1,
+   "finding_ids": [
+    "a-f01"
+   ],
+   "tls_version": "TLS 1.2",
+   "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+   "cert_status": "valid"
+  },
+  {
+   "session_id": "a-s08",
+   "protocol": "SMTP",
+   "port": 25,
+   "client": "mx.partner.example (MTA)",
+   "client_ip": "203.0.113.40",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "started_at": "2026-09-29T09:04:56Z",
+   "duration_ms": 5780,
+   "encryption": "STARTTLS",
+   "risk": "low",
+   "finding_count": 1,
+   "finding_ids": [
+    "a-f01"
+   ],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_256_GCM_SHA384",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s09",
+   "protocol": "IMAP",
+   "port": 143,
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "started_at": "2026-09-29T09:05:33Z",
+   "duration_ms": 5990,
+   "encryption": "STARTTLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.2",
+   "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+   "cert_status": "valid"
+  },
+  {
+   "session_id": "a-s10",
+   "protocol": "IMAP",
+   "port": 993,
+   "client": "Outlook 16",
+   "client_ip": "10.0.1.11",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "started_at": "2026-09-29T09:06:10Z",
+   "duration_ms": 6200,
+   "encryption": "implicit TLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_128_GCM_SHA256",
+   "cert_status": "not_observable"
+  },
+  {
+   "session_id": "a-s11",
+   "protocol": "IMAP",
+   "port": 993,
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "started_at": "2026-09-29T09:06:47Z",
+   "duration_ms": 6410,
+   "encryption": "implicit TLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.2",
+   "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+   "cert_status": "valid"
+  },
+  {
+   "session_id": "a-s12",
+   "protocol": "IMAP",
+   "port": 993,
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "started_at": "2026-09-29T09:07:24Z",
+   "duration_ms": 6620,
+   "encryption": "implicit TLS",
+   "risk": "clean",
+   "finding_count": 0,
+   "finding_ids": [],
+   "tls_version": "TLS 1.3",
+   "cipher": "TLS_AES_256_GCM_SHA384",
+   "cert_status": "not_observable"
+  }
+ ],
+ "session_details": {
+  "a-s01": {
+   "session_id": "a-s01",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-101",
+   "packet_range": "40-67",
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "client_ja3": "7cf54b5940edf893feff4df5f73871a4",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:00:37Z",
+   "duration_ms": 4310,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_256_GCM_SHA384"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_256_GCM_SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "504626b12b3c2fc09f2518090deeaae73fa96fb256f553491205688902fdff07"
+  },
+  "a-s02": {
+   "session_id": "a-s02",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-102",
+   "packet_range": "80-107",
+   "client": "Outlook 16",
+   "client_ip": "10.0.1.11",
+   "client_ja3": "8d71241b4f7c061522f0e80de762bf2e",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:01:14Z",
+   "duration_ms": 4520,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_128_GCM_SHA256",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_128_GCM_SHA256"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_128_GCM_SHA256"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "241495c2ad55028f1b5512ede39286af25c361787234c566adc537491b09e62e"
+  },
+  "a-s03": {
+   "session_id": "a-s03",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-103",
+   "packet_range": "120-147",
+   "client": "Python smtplib",
+   "client_ip": "10.0.1.12",
+   "client_ja3": "36e69a8870a862e8b5039bd9cbb7c1a4",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:01:51Z",
+   "duration_ms": 4730,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.2",
+    "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.2",
+     "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384"
+    }
+   },
+   "certificate": {
+    "status": "valid",
+    "issuer": "CN=Corp Issuing CA",
+    "key_type": "RSA",
+    "key_bits": 2048,
+    "signature": "sha256WithRSAEncryption",
+    "not_before": "2026-03-01T00:00:00Z",
+    "not_after": "2027-03-01T00:00:00Z",
+    "chain_complete": true,
+    "stapled_ocsp": false,
+    "id": "cert-mail",
+    "subject": "CN=mail.corp.example",
+    "san": [
+     "mail.corp.example"
+    ],
+    "sha256": "a47dbd1213bdbc5fab947ab0115e5ca07fae878194c7cfb92752526bb92c0243"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.2, ECDHE-RSA-AES256-GCM-SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "ok",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "CN=mail.corp.example"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "a4dad9439b12f46cda713b83f960baefdad58ffdac8eca75c910ff1cc80226c5"
+  },
+  "a-s04": {
+   "session_id": "a-s04",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-104",
+   "packet_range": "160-187",
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.14",
+   "client_ja3": "cb5fdfa70300912514f0f4de5795185a",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:02:28Z",
+   "duration_ms": 4940,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_256_GCM_SHA384"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_256_GCM_SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "3bd6e049b8ea7869894447cdc9f65d4ec1e5daf29b2376fb1b0581c066e0e0fe"
+  },
+  "a-s05": {
+   "session_id": "a-s05",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-105",
+   "packet_range": "200-227",
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.15",
+   "client_ja3": "cb5fdfa70300912514f0f4de5795185a",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:03:05Z",
+   "duration_ms": 5150,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.2",
+    "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.2",
+     "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384"
+    }
+   },
+   "certificate": {
+    "status": "valid",
+    "issuer": "CN=Corp Issuing CA",
+    "key_type": "RSA",
+    "key_bits": 2048,
+    "signature": "sha256WithRSAEncryption",
+    "not_before": "2026-03-01T00:00:00Z",
+    "not_after": "2027-03-01T00:00:00Z",
+    "chain_complete": true,
+    "stapled_ocsp": false,
+    "id": "cert-mail",
+    "subject": "CN=mail.corp.example",
+    "san": [
+     "mail.corp.example"
+    ],
+    "sha256": "a47dbd1213bdbc5fab947ab0115e5ca07fae878194c7cfb92752526bb92c0243"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.2, ECDHE-RSA-AES256-GCM-SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "ok",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "CN=mail.corp.example"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "077b3b98b76db3fa6ef1334fa928c48704bdf2fd3b4ab5bcbdb95a48b7933ae9"
+  },
+  "a-s06": {
+   "session_id": "a-s06",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 587,
+   "stream_id": "tcp-106",
+   "packet_range": "240-267",
+   "client": "Unidentified client",
+   "client_ip": "10.0.1.14",
+   "client_ja3": "cb5fdfa70300912514f0f4de5795185a",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:03:42Z",
+   "duration_ms": 5360,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_256_GCM_SHA384"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_256_GCM_SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "1d6518b44c0632cd2743116c7e43d37374efcb92769b6c195c0f8e54ef5e9542"
+  },
+  "a-s07": {
+   "session_id": "a-s07",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 25,
+   "stream_id": "tcp-107",
+   "packet_range": "280-307",
+   "client": "mx.partner.example (MTA)",
+   "client_ip": "203.0.113.40",
+   "client_ja3": "4c9163ef0417189807f3c8880c7e0e1e",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:04:19Z",
+   "duration_ms": 5570,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.2",
+    "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.2",
+     "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384"
+    }
+   },
+   "certificate": {
+    "status": "valid",
+    "issuer": "CN=Corp Issuing CA",
+    "key_type": "RSA",
+    "key_bits": 2048,
+    "signature": "sha256WithRSAEncryption",
+    "not_before": "2026-03-01T00:00:00Z",
+    "not_after": "2027-03-01T00:00:00Z",
+    "chain_complete": true,
+    "stapled_ocsp": false,
+    "id": "cert-mail",
+    "subject": "CN=mail.corp.example",
+    "san": [
+     "mail.corp.example"
+    ],
+    "sha256": "a47dbd1213bdbc5fab947ab0115e5ca07fae878194c7cfb92752526bb92c0243"
+   },
+   "risk": "low",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.2, ECDHE-RSA-AES256-GCM-SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "ok",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "CN=mail.corp.example"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [
+    "a-f01"
+   ],
+   "finding_count": 1,
+   "evidence_hash": "d483cc2057442e50f258418d62e35eda00a69ea7037668862fad27aaa579fe8a"
+  },
+  "a-s08": {
+   "session_id": "a-s08",
+   "analysis_id": "an-demo-after",
+   "protocol": "SMTP",
+   "port": 25,
+   "stream_id": "tcp-108",
+   "packet_range": "320-347",
+   "client": "mx.partner.example (MTA)",
+   "client_ip": "203.0.113.40",
+   "client_ja3": "4c9163ef0417189807f3c8880c7e0e1e",
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "server_software": "Postfix 3.6.4",
+   "started_at": "2026-09-29T09:04:56Z",
+   "duration_ms": 5780,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "mail.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_256_GCM_SHA384"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "low",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "220 mail.corp.example ESMTP Postfix"
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "220 2.0.0 Ready to start TLS",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_256_GCM_SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [
+    "a-f01"
+   ],
+   "finding_count": 1,
+   "evidence_hash": "750ed58f05ae2285b8d78b5af28dd1f6fbe4a4ee5c8dd57814ddfe595f5f6fcc"
+  },
+  "a-s09": {
+   "session_id": "a-s09",
+   "analysis_id": "an-demo-after",
+   "protocol": "IMAP",
+   "port": 143,
+   "stream_id": "tcp-109",
+   "packet_range": "360-387",
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "client_ja3": "7cf54b5940edf893feff4df5f73871a4",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "server_software": "Dovecot 2.3.19",
+   "started_at": "2026-09-29T09:05:33Z",
+   "duration_ms": 5990,
+   "encryption": "STARTTLS",
+   "starttls": {
+    "advertised": true,
+    "attempted": true,
+    "successful": true
+   },
+   "tls": {
+    "version": "TLS 1.2",
+    "cipher_suite": "ECDHE-RSA-AES128-GCM-SHA256",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "imap.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.2",
+     "cipher_suite": "ECDHE-RSA-AES128-GCM-SHA256"
+    }
+   },
+   "certificate": {
+    "status": "valid",
+    "issuer": "CN=Corp Issuing CA",
+    "key_type": "RSA",
+    "key_bits": 2048,
+    "signature": "sha256WithRSAEncryption",
+    "not_before": "2026-03-01T00:00:00Z",
+    "not_after": "2027-03-01T00:00:00Z",
+    "chain_complete": true,
+    "stapled_ocsp": false,
+    "id": "cert-imap",
+    "subject": "CN=imap.corp.example",
+    "san": [
+     "imap.corp.example"
+    ],
+    "sha256": "573acfc0cca83b8dfc89e6339de8121f12a0b4080884b53ab0b2bb1412813a90"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "banner",
+     "label": "Server banner",
+     "status": "ok",
+     "t_ms": 12,
+     "panel": null,
+     "detail": "* OK [CAPABILITY IMAP4rev1 STARTTLS] Dovecot ready."
+    },
+    {
+     "key": "caps",
+     "label": "EHLO / CAPABILITY",
+     "status": "ok",
+     "t_ms": 40,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_adv",
+     "label": "STARTTLS advertised",
+     "status": "ok",
+     "t_ms": 42,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "starttls_cmd",
+     "label": "STARTTLS command",
+     "status": "ok",
+     "t_ms": 90,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "ready",
+     "label": "OK Begin TLS negotiation now.",
+     "status": "ok",
+     "t_ms": 118,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.2, ECDHE-RSA-AES128-GCM-SHA256"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "ok",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "CN=imap.corp.example"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "df4f2d5643a7a2eb9b0c30ee950ec4d10b0f0288c060e104cc1ec8b96c2388e9"
+  },
+  "a-s10": {
+   "session_id": "a-s10",
+   "analysis_id": "an-demo-after",
+   "protocol": "IMAP",
+   "port": 993,
+   "stream_id": "tcp-110",
+   "packet_range": "400-427",
+   "client": "Outlook 16",
+   "client_ip": "10.0.1.11",
+   "client_ja3": "8d71241b4f7c061522f0e80de762bf2e",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "server_software": "Dovecot 2.3.19",
+   "started_at": "2026-09-29T09:06:10Z",
+   "duration_ms": 6200,
+   "encryption": "implicit TLS",
+   "starttls": null,
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_128_GCM_SHA256",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "imap.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_128_GCM_SHA256"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_128_GCM_SHA256"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "1194c5b8bfacbb13ca616b29832405a3ebaf721fab261eee51724c9bb61f72a3"
+  },
+  "a-s11": {
+   "session_id": "a-s11",
+   "analysis_id": "an-demo-after",
+   "protocol": "IMAP",
+   "port": 993,
+   "stream_id": "tcp-111",
+   "packet_range": "440-467",
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "client_ja3": "7cf54b5940edf893feff4df5f73871a4",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "server_software": "Dovecot 2.3.19",
+   "started_at": "2026-09-29T09:06:47Z",
+   "duration_ms": 6410,
+   "encryption": "implicit TLS",
+   "starttls": null,
+   "tls": {
+    "version": "TLS 1.2",
+    "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "imap.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.2",
+     "cipher_suite": "ECDHE-RSA-AES256-GCM-SHA384"
+    }
+   },
+   "certificate": {
+    "status": "valid",
+    "issuer": "CN=Corp Issuing CA",
+    "key_type": "RSA",
+    "key_bits": 2048,
+    "signature": "sha256WithRSAEncryption",
+    "not_before": "2026-03-01T00:00:00Z",
+    "not_after": "2027-03-01T00:00:00Z",
+    "chain_complete": true,
+    "stapled_ocsp": false,
+    "id": "cert-imap",
+    "subject": "CN=imap.corp.example",
+    "san": [
+     "imap.corp.example"
+    ],
+    "sha256": "573acfc0cca83b8dfc89e6339de8121f12a0b4080884b53ab0b2bb1412813a90"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.2, ECDHE-RSA-AES256-GCM-SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "ok",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "CN=imap.corp.example"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "8af66e79a2d263d9c6048c13b4d142a0b22b2c82e12acb0b7ab2614a80537852"
+  },
+  "a-s12": {
+   "session_id": "a-s12",
+   "analysis_id": "an-demo-after",
+   "protocol": "IMAP",
+   "port": 993,
+   "stream_id": "tcp-112",
+   "packet_range": "480-507",
+   "client": "Thunderbird 128",
+   "client_ip": "10.0.1.10",
+   "client_ja3": "7cf54b5940edf893feff4df5f73871a4",
+   "server": "imap.corp.example",
+   "server_ip": "10.0.0.30",
+   "server_software": "Dovecot 2.3.19",
+   "started_at": "2026-09-29T09:07:24Z",
+   "duration_ms": 6620,
+   "encryption": "implicit TLS",
+   "starttls": null,
+   "tls": {
+    "version": "TLS 1.3",
+    "cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "key_exchange": "ECDHE",
+    "named_group": "x25519",
+    "forward_secrecy": true,
+    "compression": false,
+    "sni": "imap.corp.example",
+    "alpn": null,
+    "client_offered_versions": [
+     "TLS 1.2",
+     "TLS 1.3"
+    ],
+    "client_offered_ciphers": [
+     "TLS_AES_256_GCM_SHA384",
+     "ECDHE-RSA-AES256-GCM-SHA384",
+     "ECDHE-RSA-AES128-GCM-SHA256",
+     "AES256-SHA256"
+    ],
+    "server_chosen": {
+     "version": "TLS 1.3",
+     "cipher_suite": "TLS_AES_256_GCM_SHA384"
+    }
+   },
+   "certificate": {
+    "status": "not_observable",
+    "reason": "Encrypted in TLS 1.3"
+   },
+   "risk": "clean",
+   "timeline": [
+    {
+     "key": "tcp",
+     "label": "TCP connect",
+     "status": "ok",
+     "t_ms": 0,
+     "panel": null,
+     "detail": null
+    },
+    {
+     "key": "client_hello",
+     "label": "ClientHello",
+     "status": "ok",
+     "t_ms": 140,
+     "panel": "tls",
+     "detail": null
+    },
+    {
+     "key": "server_hello",
+     "label": "ServerHello",
+     "status": "ok",
+     "t_ms": 172,
+     "panel": "cipher",
+     "detail": "TLS 1.3, TLS_AES_256_GCM_SHA384"
+    },
+    {
+     "key": "certificate",
+     "label": "Certificate",
+     "status": "not_observable",
+     "t_ms": 176,
+     "panel": "certificate",
+     "detail": "Encrypted in TLS 1.3"
+    },
+    {
+     "key": "appdata",
+     "label": "Encrypted application data",
+     "status": "ok",
+     "t_ms": 260,
+     "panel": null,
+     "detail": null
+    }
+   ],
+   "finding_ids": [],
+   "finding_count": 0,
+   "evidence_hash": "75d6e8673241b05479168d3d85978454ea97483f438363e3580591a60afea141"
+  }
+ },
+ "findings": {
+  "analysis_id": "an-demo-after",
+  "totals": {
+   "critical": 0,
+   "high": 0,
+   "medium": 0,
+   "low": 1
+  },
+  "groups": [
+   {
+    "id": "a-f01",
+    "analysis_id": "an-demo-after",
+    "rule_id": "STARTTLS-NOT-REQUIRED",
+    "title": "STARTTLS is opportunistic on server-to-server port 25",
+    "severity": "low",
+    "confidence": 0.7,
+    "server": "mail.corp.example",
+    "server_ip": "10.0.0.25",
+    "port": 25,
+    "protocol": "SMTP",
+    "attribution": "BY-DESIGN",
+    "affected_sessions": 2,
+    "session_ids": [
+     "a-s07",
+     "a-s08"
+    ],
+    "why_it_matters": "Port 25 between mail servers normally uses opportunistic TLS, so a downgrade would go unnoticed. Common and often accepted, listed for awareness.",
+    "status": "open",
+    "suppressed": false
+   }
+  ],
+  "suppressed": []
+ },
+ "finding_details": {
+  "a-f01": {
+   "id": "a-f01",
+   "analysis_id": "an-demo-after",
+   "rule_id": "STARTTLS-NOT-REQUIRED",
+   "title": "STARTTLS is opportunistic on server-to-server port 25",
+   "severity": "low",
+   "confidence": 0.7,
+   "server": "mail.corp.example",
+   "server_ip": "10.0.0.25",
+   "port": 25,
+   "protocol": "SMTP",
+   "attribution": "BY-DESIGN",
+   "affected_sessions": 2,
+   "session_ids": [
+    "a-s07",
+    "a-s08"
+   ],
+   "why_it_matters": "Port 25 between mail servers normally uses opportunistic TLS, so a downgrade would go unnoticed. Common and often accepted, listed for awareness.",
+   "status": "open",
+   "suppressed": false,
+   "observed": "Server advertises STARTTLS on port 25; all observed peer sessions upgraded, enforcement not visible in a passive capture.",
+   "evidence_chain": [
+    {
+     "level": "finding",
+     "ref": "a-f01"
+    },
+    {
+     "level": "session",
+     "ref": "a-s07"
+    },
+    {
+     "level": "starttls",
+     "ref": "a-s07#starttls"
+    },
+    {
+     "level": "raw",
+     "ref": "tcp-107 packets 280-307"
+    }
+   ],
+   "assessment": {
+    "score": 12,
+    "confidence": 0.7,
+    "model": "rules + isolation-forest v0.1 (mock)",
+    "reason_codes": [
+     {
+      "code": "OPPORTUNISTIC_TLS",
+      "category": "exposure",
+      "contribution": 12,
+      "explanation": "Enforcement (MTA-STS/DANE) cannot be confirmed passively."
+     }
+    ]
+   },
+   "recommendation": "No configuration change recommended; consider MTA-STS or DANE if policy requires enforced TLS.",
+   "fix_center_id": "a-f01"
+  }
+ },
+ "remediations": {
+  "a-f01": {
+   "finding_id": "a-f01",
+   "kind": "no_config_fix",
+   "server_software": "Postfix 3.6.4",
+   "detected_from": "banner: 220 mail.corp.example ESMTP Postfix",
+   "note": "No configuration fix. Opportunistic TLS on port 25 is normal for server-to-server mail; enforcement would need MTA-STS or DANE agreed with each peer."
+  }
+ },
+ "certificates": [
+  {
+   "issuer": "CN=Corp Issuing CA",
+   "key_type": "RSA",
+   "key_bits": 2048,
+   "signature": "sha256WithRSAEncryption",
+   "not_before": "2026-03-01T00:00:00Z",
+   "not_after": "2027-03-01T00:00:00Z",
+   "chain_complete": true,
+   "stapled_ocsp": false,
+   "id": "cert-mail",
+   "subject": "CN=mail.corp.example",
+   "san": [
+    "mail.corp.example"
+   ],
+   "sha256": "a47dbd1213bdbc5fab947ab0115e5ca07fae878194c7cfb92752526bb92c0243",
+   "session_ids": [
+    "a-s03",
+    "a-s05",
+    "a-s07"
+   ],
+   "not_observable_session_ids": [
+    "a-s01",
+    "a-s02",
+    "a-s04",
+    "a-s06",
+    "a-s08"
+   ],
+   "days_to_expiry": 152,
+   "observability": "observed"
+  },
+  {
+   "issuer": "CN=Corp Issuing CA",
+   "key_type": "RSA",
+   "key_bits": 2048,
+   "signature": "sha256WithRSAEncryption",
+   "not_before": "2026-03-01T00:00:00Z",
+   "not_after": "2027-03-01T00:00:00Z",
+   "chain_complete": true,
+   "stapled_ocsp": false,
+   "id": "cert-imap",
+   "subject": "CN=imap.corp.example",
+   "san": [
+    "imap.corp.example"
+   ],
+   "sha256": "573acfc0cca83b8dfc89e6339de8121f12a0b4080884b53ab0b2bb1412813a90",
+   "session_ids": [
+    "a-s09",
+    "a-s11"
+   ],
+   "not_observable_session_ids": [
+    "a-s10",
+    "a-s12"
+   ],
+   "days_to_expiry": 152,
+   "observability": "observed"
+  }
+ ],
+ "evidence": {
+  "analysis_id": "an-demo-after",
+  "pcap": {
+   "filename": "starttls-enforced_after.pcap",
+   "sha256": "0a8dcd30850b6d010c9d27b7b29e2fff722d063e00f9933b157798f5f2153412",
+   "size_bytes": 201728
+  },
+  "analysis_hash": "74a78742cd3f7c9543f86f9c94bf9eda99e5b4c06edf08ab3cfbf3d006e836f8",
+  "report_hash": "fb92d50e0e898291d18a3ea62e2252f8ec374b735b5b7cd3e61075c347008a21",
+  "ledger": [
+   {
+    "seq": 1,
+    "type": "upload",
+    "ts": "2026-09-29T09:01:00Z",
+    "payload_hash": "0a8dcd30850b6d010c9d27b7b29e2fff722d063e00f9933b157798f5f2153412",
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "entry_hash": "937a264bd7ef890d2f4e7c6794f044123a17c7ad1bafb7e6b41075756bb640a7"
+   },
+   {
+    "seq": 2,
+    "type": "analysis",
+    "ts": "2026-09-29T09:02:00Z",
+    "payload_hash": "74a78742cd3f7c9543f86f9c94bf9eda99e5b4c06edf08ab3cfbf3d006e836f8",
+    "prev_hash": "937a264bd7ef890d2f4e7c6794f044123a17c7ad1bafb7e6b41075756bb640a7",
+    "entry_hash": "8b08b4f313ec5b3c1c36a856763bfb6e9de95027bd546235c78fbc47a3aa2d8a"
+   },
+   {
+    "seq": 3,
+    "type": "report",
+    "ts": "2026-09-29T09:03:00Z",
+    "payload_hash": "fb92d50e0e898291d18a3ea62e2252f8ec374b735b5b7cd3e61075c347008a21",
+    "prev_hash": "8b08b4f313ec5b3c1c36a856763bfb6e9de95027bd546235c78fbc47a3aa2d8a",
+    "entry_hash": "e1361aa6319b7d41b384d1d82c0575a17a180cbdff035fb0f25af50793c892b4"
+   }
+  ],
+  "merkle": {
+   "algorithm": "sha256(left_hex + right_hex), odd node duplicated",
+   "root": "b0bfda95af0f22e40ba0a32a9db86e4c7048398903252072250dc1f66011b475",
+   "leaves": 13,
+   "finding_proofs": {
+    "a-f01": {
+     "leaf": "672ffbfb8264f350f773498339c24f2d97fff6cba42cf73770b3c9490b7a4af9",
+     "index": 12,
+     "path": [
+      {
+       "hash": "672ffbfb8264f350f773498339c24f2d97fff6cba42cf73770b3c9490b7a4af9",
+       "side": "right"
+      },
+      {
+       "hash": "4ad19d064bafb14625c4f0e8d01eefb9608a6bbe8d4a66f8f355fd31ed9382af",
+       "side": "right"
+      },
+      {
+       "hash": "5e8dc04f7f74ec029412020c7601f90b35b947b59ffbb9ae3c77e8b42fea231e",
+       "side": "left"
+      },
+      {
+       "hash": "87fad342a0f2516679b7cc30789d950717b4b18e8cf8d3656efdf0868505c272",
+       "side": "left"
+      }
+     ],
+     "root": "b0bfda95af0f22e40ba0a32a9db86e4c7048398903252072250dc1f66011b475"
+    }
+   }
+  },
+  "signature": {
+   "algorithm": "Ed25519",
+   "status": "valid",
+   "public_key": "MOCK-ed25519-public-key",
+   "signed_at": "2026-09-29T09:03:00Z",
+   "mock": true
+  }
+ }
+}

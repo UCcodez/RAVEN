@@ -1,0 +1,32 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--topbar-height) 1fr var(--footer-height);
+  height: 100%;
+}
+
+.main {
+  grid-column: 2;
+  overflow: auto;
+  padding: var(--space-4);
+}
+
+.footer {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-4);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.spacer { flex: 1; }
+
+/* Below 768px the sidebar needs to become a drawer; that comes with the Drawer component. */
+@media (max-width: 768px) {
+  .shell { grid-template-columns: 1fr; }
+  .main, .footer { grid-column: 1; }
+}

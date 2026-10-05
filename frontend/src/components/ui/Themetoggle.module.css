@@ -1,0 +1,23 @@
+.group {
+  display: inline-flex;
+  padding: 2px;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+}
+.opt {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--text-muted);
+  transition: background-color var(--fast), color var(--fast);
+}
+.opt[aria-pressed="true"] {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+}

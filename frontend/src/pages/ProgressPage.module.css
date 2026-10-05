@@ -1,0 +1,9 @@
+.page { display: grid; gap: 16px; max-width: 720px; }
+.elapsed { color: var(--text-secondary); margin: 0; }
+.counts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 0; }
+.counts div { padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.counts dt { color: var(--text-secondary); font-size: 0.8125rem; }
+.counts dd { margin: 0; color: var(--text-primary); font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.error { color: var(--critical); margin: 0; }
+.warn { color: var(--medium); margin: 0; }
+.link { color: var(--accent); }

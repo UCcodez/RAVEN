@@ -1,0 +1,22 @@
+ 
+version: "3.8"
+
+services:
+  mailserver:
+    image: analogic/poste.io   
+                               
+                               
+    container_name: securemailscope-mailserver
+    environment:
+      - TZ=UTC
+    ports:
+      - "25:25"      
+      - "587:587"    
+      - "465:465"    
+      - "143:143"   
+      - "993:993"    
+      - "110:110"   
+      - "995:995"    
+    volumes:
+      - ./scenarios/${SCENARIO:-clean_baseline}/certs:/certs:ro
+      - ./scenarios/${SCENARIO:-clean_baseline}/config:/config:ro

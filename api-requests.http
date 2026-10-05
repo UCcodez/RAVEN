@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:8000
+
+### Health check
+GET {{baseUrl}}/api/health
+
+### Upload a PCAP (replace the path with a real capture once you have one from data-generation/)
+POST {{baseUrl}}/api/analyses
+Content-Type: multipart/form-data; boundary=----X
+
+------X
+Content-Disposition: form-data; name="file"; filename="sample.pcapng"
+Content-Type: application/octet-stream
+
+< ./data-generation/scenarios/clean_baseline.pcapng
+------X--
+
+### List analyses
+GET {{baseUrl}}/api/analyses
+
+### Run protocol identification (replace {{analysisId}} with the id from the upload response)
+@analysisId = ana_REPLACE_ME
+POST {{baseUrl}}/api/analyses/{{analysisId}}/run
+
+### Get sessions found
+GET {{baseUrl}}/api/analyses/{{analysisId}}/sessions
+
+### Check status
+GET {{baseUrl}}/api/analyses/{{analysisId}}/status

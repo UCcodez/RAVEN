@@ -1,0 +1,17 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-control);
+  border: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.critical { color: var(--critical); }
+.high     { color: var(--high); }
+.medium   { color: var(--medium); }
+.low      { color: var(--low); }
+.info     { color: var(--info); }
+.clean    { color: var(--success); }

@@ -1,0 +1,28 @@
+.page { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.title { font-size: 24px; }
+.sub { margin-top: var(--space-1); color: var(--text-muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr; } }
+
+.file { color: var(--text-primary); text-decoration: none; }
+.file:hover { text-decoration: underline; }
+
+.labList { list-style: none; padding: 0; margin: 0; }
+.labRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+.labRow:last-child { border-bottom: 0; }
+.labName { color: var(--text-primary); font-weight: 500; }
+.labDesc { margin-top: var(--space-1); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }

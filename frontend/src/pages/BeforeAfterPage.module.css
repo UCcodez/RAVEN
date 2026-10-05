@@ -1,0 +1,11 @@
+.page { display: grid; gap: 16px; }
+.scores { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.score { font-size: 48px; font-weight: 700; margin: 0; }
+.verified, .unverified { padding: 16px; border-radius: 6px; font-weight: 600; border: 1px solid; }
+.verified { color: var(--success); border-color: var(--success); }
+.unverified { color: var(--medium); border-color: var(--medium); }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; padding: 8px; border-bottom: 1px solid var(--border); }
+.findings { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.mono { font-family: ui-monospace, monospace; }
+@media (max-width: 768px) { .scores { grid-template-columns: 1fr; } }
