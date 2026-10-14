@@ -11,7 +11,9 @@ export default function DemoBanner() {
         color: "var(--text-primary)",
       }}
     >
-      <strong>Demo data.</strong> Reports here are pre-built samples, not your uploaded file. Uploads are not processed in this hosted demo.
+      <strong>Prototype preview on sample data.</strong> RAVEN analyses captures on a local backend, so evidence never
+      leaves the analyst's machine. That backend is not hosted in this preview, so the reports here are pre-built
+      samples and uploaded files are not processed.
     </p>
   );
 }
