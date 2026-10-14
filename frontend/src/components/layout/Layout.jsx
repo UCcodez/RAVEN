@@ -5,6 +5,7 @@ import TopBar from "./TopBar";
 import { useTheme } from "../../hooks/useTheme";
 import { APP } from "../../config";
 import styles from "./Layout.module.css";
+import DemoBanner from "../ui/DemoBanner";
 
 export default function Layout() {
   const [theme, setTheme] = useTheme();
@@ -22,6 +23,7 @@ export default function Layout() {
         menuOpen={navOpen}
       />
       <main className={styles.main}>
+       <DemoBanner />
         <Outlet />
       </main>
       <footer className={styles.footer}>
