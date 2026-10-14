@@ -6,12 +6,10 @@ import SeverityBadge from "../components/ui/SeverityBadge";
 import DistributionBars from "../components/ui/DistributionBars";
 import EmptyState from "../components/ui/EmptyState";
 import ErrorState from "../components/ui/ErrorState";
+import PageActions from "../components/ui/PageActions";
 import useOverview from "../hooks/useOverview";
 import usePageTitle from "../hooks/usePageTitle";
 import styles from "./OverviewPage.module.css";
-
- 
-// Helpers
 
 function bandFor(score) {
   if (score >= 90) return "Strong";
@@ -99,10 +97,6 @@ function summaryText(posture, groups, sessionTotal) {
   return `Posture score ${score} out of 100 (${band}). ${plural(groups.length, "root-cause finding", "root-cause findings")} affect ${affected} of ${sessionTotal} sessions${tail}.`;
 }
 
- 
-// Small pieces
- 
-
 function SubScoreRow({ label, score }) {
   const band = bandFor(score);
   return (
@@ -152,8 +146,6 @@ function ViewToggle({ mode, onChange }) {
   );
 }
 
-// page
-
 export default function OverviewPage() {
   const { analysisId } = useParams();
   const [mode, setMode] = useState("executive");
@@ -178,6 +170,8 @@ export default function OverviewPage() {
         </div>
         {showToggle && <ViewToggle mode={mode} onChange={setMode} />}
       </header>
+
+      {status === "ready" && <PageActions />}
 
       {status === "loading" && (
         <p className={styles.muted} role="status">
@@ -296,11 +290,7 @@ function OverviewBody({ data, mode, analysisId }) {
         <div className={styles.rightCol}>
           <dl className={styles.kpis}>
             <Kpi label="Sessions analysed" value={kpis.sessions ?? sessionTotal} />
-            <Kpi
-              label="Findings"
-              value={kpis.findings ?? groups.length}
-              hint="Grouped by root cause"
-            />
+            <Kpi label="Findings" value={kpis.findings ?? groups.length} hint="Grouped by root cause" />
             <Kpi label="Critical findings" value={kpis.critical ?? 0} alert={(kpis.critical ?? 0) > 0} />
             <Kpi
               label="Encryption observed"
