@@ -6,8 +6,7 @@ import Layout from "./components/layout/Layout";
 import ProgressPage from "./pages/ProgressPage";
 import EvidencePage from "./pages/EvidencePage";
 import FixCenterPage from "./pages/FixCenterPage";
-import BeforeAfterPage from "./pages/BeforeAfterpage";
-
+import BeforeAfterPage from "./pages/BeforeAfterPage";
 
 export default function App() {
   return (
@@ -16,10 +15,12 @@ export default function App() {
         <Route path="/" element={<UploadPage />} />
         <Route path="/analyses" element={<AnalysesListPage />} />
         <Route path="/analyses/:analysisId" element={<AnalysisPage />} />
+        <Route path="/analyses/:analysisId/overview" element={<AnalysisPage />} />
         <Route path="/analyses/:analysisId/progress" element={<ProgressPage />} />
-        <Route path="analyses/:analysisId/evidence" element={<EvidencePage />} />
+        <Route path="/analyses/:analysisId/evidence" element={<EvidencePage />} />
         <Route path="/analyses/:analysisId/fix-center" element={<FixCenterPage />} />
         <Route path="/analyses/:analysisId/compare" element={<BeforeAfterPage />} />
+        <Route path="*" element={<p style={{ padding: 32 }}>Page not found. <a href="/">Back to upload</a></p>} />
       </Route>
     </Routes>
   );
