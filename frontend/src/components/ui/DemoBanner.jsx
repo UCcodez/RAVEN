@@ -4,9 +4,10 @@ export default function DemoBanner() {
     <p
       role="note"
       style={{
-        margin: 0,
+        margin: "16px 16px 24px",
         padding: "8px 16px",
-        borderBottom: "1px solid var(--border)",
+        border: "1px solid var(--border)",
+        borderRadius: 6,
         background: "var(--surface-raised)",
         color: "var(--text-primary)",
       }}
